@@ -1,4 +1,4 @@
- # IndJob (ZenJob India Clone)
+ZenJob India Clone
 
 A modern, scalable app for the Indian job market, inspired by ZenJob.
 
