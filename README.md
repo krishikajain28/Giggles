@@ -1,22 +1,53 @@
-ZenJob India Clone
+# 📱 ZenJob India – Gig App for Students
 
-A modern, scalable app for the Indian job market, inspired by ZenJob.
+A modern, scalable mobile app connecting college students in India with short-term, verified gig jobs.  
+Inspired by ZenJob (Germany), built exclusively for Indian students.
+
+---
+
+## ✨ Features (MVP)
+
+- 🎯 Real-time gig listings (delivery, events, surveys, etc.)
+- 👩‍🎓 Student-only verified access
+- 🔒 Authentication with Clerk
+- 📍 Location-based filtering
+- 📝 Easy application process
+
+---
 
 ## 🔧 Tech Stack
 
-**Frontend**: React Native + Expo + Tailwind CSS  
-**Backend**: Node.js + Express  
-**Database**: PostgreSQL  
-**Authentication**: Clerk  
-**Hosting**: Vercel (frontend), Render/Railway (backend)
+| Layer        | Tech                            |
+|--------------|----------------------------------|
+| **Frontend** | React Native + Expo + Tailwind CSS |
+| **Backend**  | Python + Django REST Framework    |
+| **Database** | PostgreSQL                        |
+| **Auth**     | Clerk                             |
+| **Hosting**  | Vercel (frontend), Render/Railway (backend) |
+
+---
 
 ## 🚀 Getting Started
 
-1. Clone the repo
-2. Install dependencies in both `frontend` and `backend`
-3. Create a `.env` file using `.env.example` as a reference
-4. Start backend:
+-Clone the repo
+```bash
+git clone https://github.com/yourusername/zenjob-india.git
+cd zenjob-india 
+```
+-Install dependencies in both `frontend` and `backend`
+-Create a `.env` file using `.env.example` as a reference
+-Start backend:
    ```bash
    cd backend
    node server.js
+
+
+# Contributing
+
+-Fork the repo
+-Create your feature branch: git checkout -b feature/your-feature
+-Commit changes: git commit -m 'Add some feature'
+-Push: git push origin feature/your-feature
+-Create a Pull Request
+
 
