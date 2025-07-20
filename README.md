@@ -17,12 +17,12 @@ Inspired by ZenJob (Germany), built exclusively for Indian students.
 
 ## 🔧 Tech Stack
 
-| Layer        | Tech                            |
+| Layer        | Tech                             |
 |--------------|----------------------------------|
-| **Frontend** | React Native + Expo + Tailwind CSS |
-| **Backend**  | Python + Django REST Framework    |
-| **Database** | PostgreSQL                        |
-| **Auth**     | Clerk                             |
+| **Frontend** | React + Tailwind CSS             |
+| **Backend**  | Python + Django REST Framework   |
+| **Database** | PostgreSQL                       |
+| **Auth**     | Clerk                            |
 | **Hosting**  | Vercel (frontend), Render/Railway (backend) |
 
 ---
@@ -49,5 +49,4 @@ cd zenjob-india
 -Commit changes: git commit -m 'Add some feature'
 -Push: git push origin feature/your-feature
 -Create a Pull Request
-
 
