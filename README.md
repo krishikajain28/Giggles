@@ -50,4 +50,3 @@ cd zenjob-india
 -Push: git push origin feature/your-feature
 -Create a Pull Request
 
-
