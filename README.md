@@ -29,9 +29,27 @@ Inspired by ZenJob (Germany), built with love for India’s student workforce.
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+-Clone the repo
 
 ```bash
 git clone https://github.com/yourusername/zenjob-india.git
 cd zenjob-india
+```
+
+-Install dependencies in both `frontend` and `backend`
+-Create a `.env` file using `.env.example` as a reference
+-Start backend:
+
+```bash
+cd backend
+node server.js
+
+
+# Contributing
+
+-Fork the repo
+-Create your feature branch: git checkout -b feature/your-feature
+-Commit changes: git commit -m 'Add some feature'
+-Push: git push origin feature/your-feature
+-Create a Pull Request
 ```
