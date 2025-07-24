@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializers import UserSerializer, NoteSerializer
+from .serializers import UserSerializer, NoteSerializer, GigSerializer, ApplicationSerializer, LocationSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Note
+from .models import Note, Gig, Application, Location
 
 # Create your views here.
 
@@ -34,3 +34,18 @@ class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+class GigListCreate(generics.ListCreateAPIView):
+    queryset = Gig.objects.all()
+    serializer_class = GigSerializer
+    permission_classes = [AllowAny]
+
+class ApplicationListCreate(generics.ListCreateAPIView):
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer
+    permission_classes = [IsAuthenticated]
+
+class LocationListCreate(generics.ListCreateAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+    permission_classes = [IsAuthenticated]

@@ -1,9 +1,6 @@
-const App = () => {
-  return (
-    <div>
-      <h1>Hello ZenJob</h1>
-    </div>
-  )
-}
+import React from 'react';
+import AppRoutes from './routes';
+
+const App = () => <AppRoutes />;
 
 export default App;
