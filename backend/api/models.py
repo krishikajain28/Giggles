@@ -1,3 +1,7 @@
+"""
+models.py
+Defines database models for the ZenJob Clone backend.
+"""
 from django.db import models
 from django.contrib.auth.models import User
 

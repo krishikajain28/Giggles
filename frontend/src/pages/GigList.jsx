@@ -1,3 +1,5 @@
+// GigList.jsx
+// This component displays a list of available gigs and allows users to search and filter gigs.
 import React, { useEffect, useState } from 'react';
 
 const backgroundStyle = {
@@ -112,7 +114,7 @@ const GigList = () => {
       <div style={landingStyle}>
         <div style={titleStyle}>Find Your Next Gig</div>
         <div style={subtitleStyle}>
-          Discover flexible, student-friendly opportunities — start earning while you learn!
+          Discover flexible, student-friendly opportunities start earning while you learn!
         </div>
       </div>
 

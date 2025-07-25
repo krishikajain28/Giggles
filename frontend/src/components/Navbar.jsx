@@ -1,5 +1,8 @@
+// Navbar.jsx
+// This component renders the navigation bar for the ZenJob Clone application, including navigation links and the logo.
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../clerkStub.jsx';
 
 const navStyle = {
   display: 'flex',
@@ -8,6 +11,22 @@ const navStyle = {
   background: '#f28c28',
   padding: '1rem',
   gap: '2rem',
+};
+
+const logoContainerStyle = {
+  position: 'absolute',
+  left: '2rem',
+  display: 'flex',
+  alignItems: 'center',
+  height: '100%',
+};
+
+const logoStyle = {
+  height: '40px',
+  width: 'auto',
+  cursor: 'pointer',
+  borderRadius: '8px',
+  boxShadow: '0 1px 4px rgba(0,0,0,0.08)',
 };
 
 const linkStyle = {
@@ -24,32 +43,100 @@ const linkHoverStyle = {
   background: '#a04000',
 };
 
-const links = [
-  { to: '/', label: 'Gigs' },
-  { to: '/companies', label: 'Companies' },
-  { to: '/profile', label: 'Profile' },
-  { to: '/login', label: 'Login' },
-  { to: '/about', label: 'About' },
-];
-
 const Navbar = () => {
   const [hovered, setHovered] = React.useState(null);
+  const { isSignedIn, signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut();
+    navigate('/login');
+  };
+
   return (
-    <nav style={navStyle}>
-      {links.map((link, idx) => (
+    <nav style={{ ...navStyle, position: 'relative' }}>
+      <div style={logoContainerStyle}>
+        <img
+          src="/Giggles.png" // You can replace this with your own logo path
+          alt="Logo"
+          style={logoStyle}
+          onClick={() => navigate('/')}
+        />
+      </div>
+      <Link
+        to="/gigs"
+        style={{
+          ...linkStyle,
+          ...(hovered === 0 ? linkHoverStyle : {}),
+        }}
+        onMouseEnter={() => setHovered(0)}
+        onMouseLeave={() => setHovered(null)}
+      >
+        Gigs
+      </Link>
+      {isSignedIn && (
         <Link
-          key={link.to}
-          to={link.to}
+          to="/companies"
           style={{
             ...linkStyle,
-            ...(hovered === idx ? linkHoverStyle : {}),
+            ...(hovered === 1 ? linkHoverStyle : {}),
           }}
-          onMouseEnter={() => setHovered(idx)}
+          onMouseEnter={() => setHovered(1)}
           onMouseLeave={() => setHovered(null)}
         >
-          {link.label}
+          Companies
         </Link>
-      ))}
+      )}
+      {isSignedIn && (
+        <Link
+          to="/profile"
+          style={{
+            ...linkStyle,
+            ...(hovered === 2 ? linkHoverStyle : {}),
+          }}
+          onMouseEnter={() => setHovered(2)}
+          onMouseLeave={() => setHovered(null)}
+        >
+          Profile
+        </Link>
+      )}
+      {!isSignedIn ? (
+        <Link
+          to="/login"
+          style={{
+            ...linkStyle,
+            ...(hovered === 3 ? linkHoverStyle : {}),
+          }}
+          onMouseEnter={() => setHovered(3)}
+          onMouseLeave={() => setHovered(null)}
+        >
+          Login
+        </Link>
+      ) : (
+        <span
+          style={{
+            ...linkStyle,
+            cursor: 'pointer',
+            ...(hovered === 3 ? linkHoverStyle : {}),
+          }}
+          onMouseEnter={() => setHovered(3)}
+          onMouseLeave={() => setHovered(null)}
+          onClick={handleLogout}
+        >
+          Logout
+        </span>
+      )}
+      <Link
+        to="/about"
+        style={{
+          ...linkStyle,
+          ...(hovered === 4 ? linkHoverStyle : {}),
+        }}
+        onMouseEnter={() => setHovered(4)}
+        onMouseLeave={() => setHovered(null)}
+      >
+        About
+      </Link>
     </nav>
   );
 };

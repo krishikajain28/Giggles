@@ -1,3 +1,7 @@
+"""
+urls.py
+Defines URL routes for the main backend Django project.
+"""
 from django.contrib import admin
 from django.urls import path , include
 from api.views import CreateUserView
