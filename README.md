@@ -1,4 +1,4 @@
-# 📱 ZenJob India – Gig App for Students
+# 📱 Giggles – Gig App for Students
 
 A modern, scalable platform connecting college students in India with short-term, verified gig jobs.  
 Inspired by ZenJob (Germany), built with love for India’s student workforce.
