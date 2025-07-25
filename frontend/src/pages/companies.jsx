@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+// companies.jsx
+// This component allows recruiters to post new gigs. Access is restricted to logged-in users.
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../clerkStub.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const backgroundStyle = {
     minHeight: '100vh',
@@ -66,6 +70,14 @@ const Companies = () => {
     location: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const { isSignedIn } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      navigate('/login');
+    }
+  }, [isSignedIn, navigate]);
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });

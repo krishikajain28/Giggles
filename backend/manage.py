@@ -1,5 +1,7 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""
+manage.py
+Django's command-line utility for administrative tasks in the ZenJob Clone backend.
+"""
 import os
 import sys
 

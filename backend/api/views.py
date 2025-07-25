@@ -1,3 +1,7 @@
+"""
+views.py
+Defines API endpoints and business logic for the ZenJob Clone backend.
+"""
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics
