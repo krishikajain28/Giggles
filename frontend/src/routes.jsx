@@ -6,6 +6,8 @@ import GigDetail from './pages/GigDetail';
 import ApplicationFlow from './pages/ApplicationFlow';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
+import About from './pages/About';
+import Companies from './pages/companies';
 
 const AppRoutes = () => (
   <Router>
@@ -16,6 +18,8 @@ const AppRoutes = () => (
       <Route path="/apply/:gigId" element={<ApplicationFlow />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/companies" element={<Companies />} />
     </Routes>
   </Router>
 );
