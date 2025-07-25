@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+// Login.jsx
+// This component handles user login and registration for the ZenJob Clone application.
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../clerkStub.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const backgroundStyle = {
   minHeight: '100vh',
@@ -79,6 +83,14 @@ const Login = () => {
   const [form, setForm] = useState({ username: '', password: '' });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const { isSignedIn, signIn } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate('/gigs');
+    }
+  }, [isSignedIn, navigate]);
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -98,8 +110,9 @@ const Login = () => {
         });
         if (!res.ok) throw new Error('Invalid credentials');
         const data = await res.json();
-        localStorage.setItem('token', data.access);
+        signIn(data.access);
         setSuccess('Login successful!');
+        setTimeout(() => navigate('/gigs'), 500);
       } else {
         // Signup
         const res = await fetch('http://127.0.0.1:8000/api/user/register/', {

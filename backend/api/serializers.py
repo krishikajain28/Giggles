@@ -1,3 +1,7 @@
+"""
+serializers.py
+Serializers for converting model instances to and from JSON for the ZenJob Clone backend API.
+"""
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Note, Gig, Application, Location

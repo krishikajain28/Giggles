@@ -1,3 +1,7 @@
+"""
+urls.py
+Defines URL routes for the API endpoints in the ZenJob Clone backend.
+"""
 from django.urls import path
 from .views import NoteListCreate, NoteDelete, CreateUserView, GigListCreate, ApplicationListCreate, LocationListCreate
 

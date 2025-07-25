@@ -1,3 +1,5 @@
+// About.jsx
+// This component displays information about the ZenJob Clone application.
 import React from 'react';
 
 const backgroundStyle = {

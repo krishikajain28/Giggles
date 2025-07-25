@@ -1,3 +1,7 @@
+"""
+apps.py
+Configuration for the API app in the ZenJob Clone backend.
+"""
 from django.apps import AppConfig
 
 
